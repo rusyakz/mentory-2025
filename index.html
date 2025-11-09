@@ -1,42 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
+    <script type="application/javascript" src="./index.js" defer></script>
     <title>Document</title>
 </head>
 <body>
 
-    <h1>Урок №2</h1>
-    
 
-    <p class="error-paragraph">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur ipsam labore 
-        vero sed praesentium maiores at sequi voluptatum dicta id dolores nostrum tempore doloribus, 
-        impedit ab, provident ut dolore consequatur.
-    </p>
+    <h1 align="center" id="hello">Hello</h1>
+    <table align="center" class="table">
+        <tr>
+            <td>
+                <div class ="items_wrapper">
+                        <div class="img_wrapper">
+                            <img class="img" src="./images/apple.jpg" alt="">
+                        </div>
+                    <b>Яблоки: </b><i>1200тг</i>
+                    <input type="number" min="1" max="99" class="quantity">
+                    <input type="button" class="btn" value="Add">
+                </div>
+            </td>
 
+            <td>
+                <div class ="items_wrapper">
+                        <div class="img_wrapper">
+                            <img class="img" src="./images/mandarin.jpg" alt="">
+                        </div>
+                    <b>Мандарин: </b><i>2000тг</i>
+                    <input type="number" min="1" max="99" class="quantity">
+                    <input type="button" class="btn" value="Add">
+                </div>
+            </td>
 
-    <button class="btn">Кнопка</button>
+            <td>
+                <div class ="items_wrapper">
+                        <div class="img_wrapper">
+                            <img class="img" src="./images/resp.jpg" alt="">
+                        </div>
+                    <b>Клубника: </b><i>2500тг</i>
+                    <input type="number" min="1" max="99" class="quantity">
+                    <input type="button" class="btn" value="Add">
+                </div>
+            </td>
 
-    <div class="test">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi exercitationem cupiditate fugit 
-        nisi sapiente perferendis eum minus in, eveniet ipsum nihil repellendus ad asperiores optio natus. 
-        Id architecto quis saepe.
-    </div>
-
-
-    <div class="img_wrapper">
-        <img class="img" src="./GVrzNura8AIOvJt.jpeg" alt="">
-    </div>
-
-    <div class="loader"></div>
-
-
-
-    <!-- <textarea></textarea>
-    <input type="password" name="password" maxlength="2"> -->
-
+        </tr>
+    </table>
 </body>
 </html>

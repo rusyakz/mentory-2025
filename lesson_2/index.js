@@ -2,7 +2,6 @@
 
 
 let name = prompt('What is your name?');
-let helloUser = document.getElementById('hello');
 
 // if (typeof name === 'string') {
 //     alert(`Hello ${name}`);
@@ -12,10 +11,13 @@ let helloUser = document.getElementById('hello');
 
 function hello() {
     if (name) {
-        helloUser.innerHTML += `, ${name.toUpperCase()}!!!`;
-    }
+        userName.innerHTML = `Hello ${name}`;
+    } else {userName.innerHTML = 'Hello';}
 }
 
-document.addEventListener('DOMContentLoaded', hello);
+
+let userName = document.getElementById('hello-user');
+
+document.addEventListener('DOMContentLoaded', hello)
 
 console.log(name);
