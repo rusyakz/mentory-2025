@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Визитка</title>
+
+    <!-- Наверное CSS в отдельный файл надо было поместить -->
+    <style>
+        #main {
+            background-color: white;
+            height: 80%;
+            width: 80%;
+        }
+        #about {
+            display: flex;
+            border: 2px solid #3638b7;
+            height: 150px;
+            width: 50vw;
+            margin: auto auto 5px;
+        }
+        #skills {
+            display: flex;
+            border: 2px solid #e10b2b;
+            height: 100px;
+            width: 50vw;
+            margin: auto auto 5px;
+        }
+        #hobbies {
+            display: flex;
+            border: 2px solid #4ba848;
+            height: 120px;
+            width: 50vw;
+            margin: auto auto 5px;
+        }
+        #contact {
+            display: flex;
+            border: 2px solid #0c0000;
+            height: 120px;
+            width: 50vw;
+            margin: auto auto 5px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Берикжан Рустем</h1>
+
+    <div id="main">
+        <div id="about">
+            <h2>Обо мне:</h2>
+            <ul>
+                <li>Возраст <b id="year">37</b> лет</li>
+                <li>Город проживания <b>Алматы</b></li>
+                <li>Гражданство Казахстан</li>
+            </ul>
+            <img src="https://png.pngtree.com/png-clipart/20190925/original/pngtree-no-avatar-vector-isolated-on-white-background-png-image_4979074.jpg" style="width: 100px; height: 100px;">
+        </div>
+
+        <div id="skills">
+            <h2>Навыки:</h2>
+            <ol>
+                <li>Продвинутый пользователь ПК</li>
+                <li>Умение работать в команде (типа :) )</li>
+                <li>АСУТП</li>
+            </ol>
+        </div>
+
+        <div id="hobbies">
+            <h2>Интересы</h2>
+            <ul>
+                <li>Читать</li>
+                <li>Играть</li>
+                <li>Думать</li>
+                <li>Размышлять</li>
+            </ul>
+        </div>
+
+        <div id="contact">
+            <h2>Контакты</h2>
+            <ul>
+                <li>Тел. <b>+7 701 XXX XXXX</b></li>
+                <li>email <b>r.berikzhan@gmail.com</b></li>
+                <li><a href="">VK</a></li>
+                <li><a href="">GITHUB</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <script type="application/javascript" defer>
+    "use strick"
+    let main = document.getElementById('main');
+
+    function changeColor() {
+
+        console.log(main.style.backgroundColor)
+
+        if (main.style.backgroundColor === 'white') {
+        main.style.backgroundColor = 'yellow'
+        } else {
+            main.style.backgroundColor = 'white'
+        }
+    }
+
+    main.addEventListener('click', changeColor);
+    </script>
+
+</body>
+</html>
