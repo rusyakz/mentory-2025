@@ -1,0 +1,15 @@
+@import url(./reset.css);
+@import url(./components/button.css);
+@import url(./components/news-card.css);
+
+
+.header{
+    position: sticky;
+    top: 0;
+    background-color: #4ba848;
+    z-index: 10;
+}
+
+body{
+    height: 200vh;
+}
