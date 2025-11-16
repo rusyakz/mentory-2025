@@ -1,67 +1,44 @@
-.table{
-    box-sizing: border-box;
-    background: antiquewhite;
-    padding: 20px;
+.test{
+    content: "fdfdfdfdf";
 }
 
-.items_wrapper{
-    border: 1px solid darkseagreen;
-    width: 220px;
-    height: 230px;
-    border-radius: 15px;
-    background-color: grey;
-    overflow: hidden;
-    cursor: pointer;
+.test::after{
+    content: "fdfdfdfdf";
+    visibility: revert;
+    font-weight: bold;
+    font-size: 18px;
+    /*font-family: "Droid Serif";*/
 }
 
-/*.items{*/
-/*    width: 200px;*/
-/*    height: 150px;*/
-/*    overflow: hidden;*/
-/*}*/
-
-.img_wrapper{
-    border: 1px solid darkseagreen;
-    border-radius: 15px;
-    width: 100%;
-    height: 80%;
-    overflow: hidden;
-
+a {
+    text-decoration: none;
 }
 
-.img{
-    width: 100%;
-    height: auto;
-    transition: transform .5s ease-in-out;
+a:hover {
+    text-decoration: underline;
+    left: 250px;
 }
 
-.img_wrapper:hover .img{
-    transform: scale(120%);
+a:hover {
+    cursor: auto;
 }
 
-.btn{
-    width: 40px;
-    height: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #3638b7;
-    cursor: pointer;
-}
-
-.btn:hover{
-    transition: transform .5s ease-in-out;
-    border-radius: 15px;
+[alert_data]::after {
+    content: attr(alert_data);
+    position: absolute;
     background-color: #e10b2b;
+    border-radius: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    /*left: 0;*/
+    /*top: 0;*/
+    /*width: 15px;*/
+    /*font-size: 15px;*/
 }
 
-/*.btn:hover .btn_hover{*/
-/*    transform: scale(1.2);*/
-/*}*/
-
-.quantity{
-    width: 30px;
-    height: 20px;
-    border: 1px #ddd solid;
-    border-radius: 5px;
-    background-color: darkgrey;
+.alert_button {
+    border: 1px solid lightgray;
+    width: 50px;
+    height: 50px;
 }
