@@ -1,16 +1,23 @@
 'use strict'
 
+// let bb = 'rustem man'
+//
+// let test = {
+//     bb: 'tt'
+// }
+//
+// console.log(test['bb']);
 
-let name = 'rustem';
 
-let age = NaN;
 
-console.log(0/22 === age);
 
-console.log(0 == null);
+let test = (2 > 3) ? true : 22;
 
-console.log(0 && null)
+console.log(test)
 
-let g = 'ff' + 33
-console.log(g)
-console.log(isNaN(5))
+
+let a = 22;
+
+for (let i = 0; i < a; i++) {
+    console.log(i)
+}
