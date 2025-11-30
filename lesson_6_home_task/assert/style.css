@@ -1,0 +1,186 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #dacea2;
+    height: 150vh;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.header {
+    background-color: #e8d887;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+}
+
+.header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.logo {
+    height: 40px;
+}
+
+/*.header__nav {*/
+/*    flex: 1;*/
+/*}*/
+
+.header__list {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    /*margin: 0;*/
+    /*padding: 0;*/
+}
+
+.header__list a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.header__list a.activ {
+    color: #007bff;
+}
+
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-button {
+    background-color: #007bff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.search-button img {
+    height: 16px;
+}
+
+.lang {
+    margin-left: 15px;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.btn {
+    width: 160px;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 0; */
+    border-radius: 10px;
+    background-color: #F6762C;
+    position: relative;
+    transition: all .5s ease-in-out;
+
+    font-weight: 500;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+
+.btn:hover {
+    /* transform: ; */
+    background-color: #642500;
+    border-radius: 25px;
+    opacity: .8;
+
+}
+
+
+/* Маленькие экраны */
+@media (max-width: 768px) {
+    body {
+        background-color: #acefa9;
+    }
+
+    .header .container {
+        flex-direction: column;
+        align-items: flex-start;
+
+  }
+
+  .header__list {
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+  }
+
+  .search {
+      width: 100%;
+      margin-top: 10px;
+  }
+
+  .search-input {
+      flex: 1;
+      width: 80%;
+  }
+
+  .lang {
+      margin-top: 10px;
+  }
+
+  .btn {
+      margin-top: 10px;
+      width: 100%;
+      justify-content: center;
+  }
+}
+
+
+/* Средние экраны */
+@media (min-width: 769px) and (max-width: 1024px) {
+   body {
+       background-color: #9fa0e3;
+   }
+
+  .header__list {
+      gap: 15px;
+  }
+
+  .search-input {
+      width: 150px;
+  }
+}
+
+  .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
+}
+
+  .block {
+      flex: 1 1 30%;
+      background-color: #e0f7fa;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+  }
