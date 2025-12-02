@@ -144,4 +144,4 @@ function getPrediction() {
 }
 
 
-getPredictionButton.addEventListener("click", getPrediction);
+document.addEventListener("click", getPrediction);
