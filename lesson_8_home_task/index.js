@@ -11,25 +11,18 @@ function eventListeners(event) {
 form.addEventListener('input', eventListeners);
 
 
-function submit() {
-    console.log(form)
+
+function submit(event) {
+    event.preventDefault(); // чтобы не перезагружалась страница
+
+    const formData = new FormData(form);
+    const obj = {};
+
+    formData.forEach((value, key) => {
+        obj[key] = value;
+      });
+      console.log("Все данные формы:", obj);
 }
 
+
 form.addEventListener('submit', submit);
-
-
-
-
-// function submit(event) {
-//     event.preventDefault(); // чтобы не перезагружалась страница
-//
-//     const formData = new FormData(form);
-//     const obj = {};
-//
-//     formData.forEach((value, key) => {
-//         obj[key] = value;
-//       });
-//       console.log("Все данные формы:", obj);
-// }
-
-
