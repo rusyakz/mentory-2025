@@ -14,7 +14,6 @@ closeModalButtons.forEach((btn) => {
 modalWindows.forEach((modal) => {
   // Закрытие по клику на оверлей (тёмная область)
   modal.addEventListener('click', (event) => {
-    // если клик пришёл именно по элементу .modal (оверлей), закрываем
     if (event.target === modal) {
       modal.classList.remove('open');
     }
@@ -42,26 +41,34 @@ function closeModal(event) {
 const accordions = document.querySelectorAll('.accordion__container');
 
 function toggleAccordion(event) {
+  // Найдём контейнер аккордиона (в котором произошло событие)
   const accordionContainer = event.target.closest('[accordion-type]') ?? event.target.closest('.accordion__container');
-  const accordionType = event.target.closest('[accordion-type]')?.getAttribute('accordion-type') ?? 'multi';
-  const isAccordionHeader = event.target.classList.contains('accordion__header');
+  if (!accordionContainer) return;
 
-  if (isAccordionHeader) {
-    const parentElement = event.target.closest('[accordion-id]');
-    const accordionState = parentElement.getAttribute('accordion-state');
+  // Определим тип аккордиона (single или multi) — берём атрибут у контейнера
+  const accordionType = accordionContainer.getAttribute('accordion-type') ?? 'multi';
 
-    if (accordionType === 'single') {
-      const accordions = accordionContainer.querySelectorAll('[accordion-id]');
-      accordions.forEach((item) => {
-        item.setAttribute('accordion-state', 'closed');
-      });
-    }
+  // Ищем ближайший элемент header — это решает проблему кликов по вложенным элементам
+  const header = event.target.closest('.accordion__header');
+  if (!header) return; // если клик не по хедеру и не по его вложенным элементам — игнорируем
 
-    if (accordionState === 'closed') {
-      parentElement.setAttribute('accordion-state', 'open');
-    } else {
-      parentElement.setAttribute('accordion-state', 'closed');
-    }
+  // Найдём блок-родитель с атрибутом accordion-id
+  const parentElement = header.closest('[accordion-id]');
+  if (!parentElement) return;
+
+  const accordionState = parentElement.getAttribute('accordion-state');
+
+  if (accordionType === 'single') {
+    const allBlocks = accordionContainer.querySelectorAll('[accordion-id]');
+    allBlocks.forEach((item) => {
+      item.setAttribute('accordion-state', 'closed');
+    });
+  }
+
+  if (accordionState === 'closed') {
+    parentElement.setAttribute('accordion-state', 'open');
+  } else {
+    parentElement.setAttribute('accordion-state', 'closed');
   }
 }
 
