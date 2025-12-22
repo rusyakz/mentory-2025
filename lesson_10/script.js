@@ -2,18 +2,11 @@
 // МОДАЛКИ
 // -----------------------------
 document.querySelectorAll('.modal').forEach(modal => {
-  // Открытие модалки document.querySelector('[data-open-modal="id"]').addEventListener('click', () => modal.classList.add('open'));
-
-  // Закрытие по клику на оверлей
   modal.addEventListener('click', (event) => {
-    // Если клик произошёл внутри контента модалки — ничего не делать
     if (event.target.closest('.modal__content')) return;
-
-    // Иначе — закрываем модалку (клик по оверлею или по самому .modal)
     modal.classList.remove('open');
   });
 
-  // Закрытие по кнопке внутри модалки
   modal.querySelectorAll('.modal__close').forEach(btn => {
     btn.addEventListener('click', () => modal.classList.remove('open'));
   });
