@@ -1,17 +1,30 @@
 // -----------------------------
 // МОДАЛКИ
 // -----------------------------
+document.querySelectorAll('[data-open-modal]').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const modalId = trigger.getAttribute('data-open-modal');
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      modal.classList.add('open');
+    }
+  });
+});
+
 document.querySelectorAll('.modal').forEach(modal => {
+  // Закрытие по клику на оверлей
   modal.addEventListener('click', (event) => {
-    if (event.target.closest('.modal__content')) return;
-    modal.classList.remove('open');
+    if (!event.target.closest('.modal__content')) {
+      modal.classList.remove('open');
+    }
   });
 
+  // Закрытие по кнопке внутри модалки
   modal.querySelectorAll('.modal__close').forEach(btn => {
     btn.addEventListener('click', () => modal.classList.remove('open'));
   });
 
-  // закрытие по Esc
+  // Закрытие по Esc
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && modal.classList.contains('open')) {
       modal.classList.remove('open');
