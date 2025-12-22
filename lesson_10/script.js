@@ -1,16 +1,16 @@
 function toggleAccordion(event) {
-  // Найдём контейнер аккордиона
+  // контейнер аккордиона
   const accordionContainer = event.target.closest('[accordion-type]') ?? event.target.closest('.accordion__container');
   if (!accordionContainer) return;
 
-  // Определим тип аккордиона (single или multi)
+  // тип акардеона
   const accordionType = accordionContainer.getAttribute('accordion-type') ?? 'multi';
 
-  // Ищем ближайший элемент header — это решает проблему кликов по вложенным элементам
+  // Ищем ближайший элемент header
   const header = event.target.closest('.accordion__header');
   if (header) return; // если клик не по хедеру и не по его вложенным элементам — игнорируем
 
-  // Найдём блок-родитель с атрибутом accordion-id
+  // блок-родитель с атрибутом accordion-id
   const parentElement = header.closest('[accordion-id]');
   if (!parentElement) return;
 
