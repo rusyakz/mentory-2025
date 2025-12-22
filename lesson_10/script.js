@@ -1,31 +1,55 @@
-function toggleAccordion(event) {
-  // контейнер аккордиона
-  const accordionContainer = event.target.closest('[accordion-type]') ?? event.target.closest('.accordion__container');
-  if (!accordionContainer) return;
+// -----------------------------
+// МОДАЛКИ
+// -----------------------------
+document.querySelectorAll('.modal').forEach(modal => {
+  // Открытие модалки document.querySelector('[data-open-modal="id"]').addEventListener('click', () => modal.classList.add('open'));
 
-  // тип акардеона
-  const accordionType = accordionContainer.getAttribute('accordion-type') ?? 'multi';
+  // Закрытие по клику на оверлей
+  modal.addEventListener('click', (event) => {
+    // Если клик произошёл внутри контента модалки — ничего не делать
+    if (event.target.closest('.modal__content')) return;
 
-  // Ищем ближайший элемент header
+    // Иначе — закрываем модалку (клик по оверлею или по самому .modal)
+    modal.classList.remove('open');
+  });
+
+  // Закрытие по кнопке внутри модалки
+  modal.querySelectorAll('.modal__close').forEach(btn => {
+    btn.addEventListener('click', () => modal.classList.remove('open'));
+  });
+
+  // закрытие по Esc
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      modal.classList.remove('open');
+    }
+  });
+});
+
+// -----------------------------
+// АККОРДЕОН
+
+document.addEventListener('click', function (event) {
+  // Ищем ближайший header от места клика
   const header = event.target.closest('.accordion__header');
-  if (header) return; // если клик не по хедеру и не по его вложенным элементам — игнорируем
+  if (!header) return; // клик не по заголовку аккордеона
 
-  // блок-родитель с атрибутом accordion-id
-  const parentElement = header.closest('[accordion-id]');
-  if (!parentElement) return;
+  // Находим родительский блок аккордеона
+  const block = header.closest('[accordion-id]');
+  if (!block) return;
 
-  const accordionState = parentElement.getAttribute('accordion-state');
+  // Находим контейнер аккордеона
+  const container = block.closest('.accordion__container');
+  const type = container?.getAttribute('accordion-type') ?? 'multi';
 
-  if (accordionType === 'single') {
-    const allBlocks = accordionContainer.querySelectorAll('[accordion-id]');
-    allBlocks.forEach((item) => {
-      item.setAttribute('accordion-state', 'closed');
+  // Если режим single — закрываем все остальные блоки в контейнере
+  if (type === 'single' && container) {
+    container.querySelectorAll('[accordion-id]').forEach(el => {
+      if (el !== block) el.setAttribute('accordion-state', 'closed');
     });
   }
 
-  if (accordionState === 'closed') {
-    parentElement.setAttribute('accordion-state', 'open');
-  } else {
-    parentElement.setAttribute('accordion-state', 'closed');
-  }
-}
+  // Переключаем состояние текущего блока
+  const currentState = block.getAttribute('accordion-state') ?? 'closed';
+  block.setAttribute('accordion-state', currentState === 'open' ? 'closed' : 'open');
+});
