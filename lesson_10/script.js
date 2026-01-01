@@ -1,70 +1,61 @@
-// Модалки продвинутые
-const openModalButtons = document.querySelectorAll('[data-modal-action="open-modal"]');
-const closeModalButtons = document.querySelectorAll('[data-modal-action="close-modal"]');
-const modalWindows = document.querySelectorAll('[data-modal-action="modal"]');
-
-openModalButtons.forEach((btn) => {
-  btn.addEventListener('click', openModal);
-});
-
-closeModalButtons.forEach((btn) => {
-  btn.addEventListener('click', closeModal);
-});
-
-modalWindows.forEach((modal) => {
-  // Закрытие по клику на оверлей (тёмная область)
-  modal.addEventListener('click', (event) => {
-    // если клик пришёл именно по элементу .modal (оверлей), закрываем
-    if (event.target === modal) {
-      modal.classList.remove('open');
-    }
-  });
-});
-
-function openModal(event) {
-  modalWindows.forEach((modal) => {
-    if (modal.getAttribute('data-modal') === event.target.getAttribute('data-modal')) {
+// -----------------------------
+// МОДАЛКИ
+// -----------------------------
+document.querySelectorAll('[data-open-modal]').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const modalId = trigger.getAttribute('data-open-modal');
+    const modal = document.getElementById(modalId);
+    if (modal) {
       modal.classList.add('open');
     }
   });
-}
+});
 
-function closeModal(event) {
-  modalWindows.forEach((modal) => {
-    if (modal.getAttribute('data-modal') === event.target.getAttribute('data-modal')) {
+document.querySelectorAll('.modal').forEach(modal => {
+  // Закрытие по клику на оверлей
+  modal.addEventListener('click', (event) => {
+    if (!event.target.closest('.modal__content')) {
       modal.classList.remove('open');
     }
   });
-}
 
-// Аккордионы
+  // Закрытие по кнопке внутри модалки
+  modal.querySelectorAll('.modal__close').forEach(btn => {
+    btn.addEventListener('click', () => modal.classList.remove('open'));
+  });
 
-const accordions = document.querySelectorAll('.accordion__container');
-
-function toggleAccordion(event) {
-  const accordionContainer = event.target.closest('[accordion-type]') ?? event.target.closest('.accordion__container');
-  const accordionType = event.target.closest('[accordion-type]')?.getAttribute('accordion-type') ?? 'multi';
-  const isAccordionHeader = event.target.classList.contains('accordion__header');
-
-  if (isAccordionHeader) {
-    const parentElement = event.target.closest('[accordion-id]');
-    const accordionState = parentElement.getAttribute('accordion-state');
-
-    if (accordionType === 'single') {
-      const accordions = accordionContainer.querySelectorAll('[accordion-id]');
-      accordions.forEach((item) => {
-        item.setAttribute('accordion-state', 'closed');
-      });
+  // Закрытие по Esc
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) {
+      modal.classList.remove('open');
     }
+  });
+});
 
-    if (accordionState === 'closed') {
-      parentElement.setAttribute('accordion-state', 'open');
-    } else {
-      parentElement.setAttribute('accordion-state', 'closed');
-    }
+// -----------------------------
+// АККОРДЕОН
+
+document.addEventListener('click', function (event) {
+  // Ищем ближайший header от места клика
+  const header = event.target.closest('.accordion__header');
+  if (!header) return; // клик не по заголовку аккордеона
+
+  // Находим родительский блок аккордеона
+  const block = header.closest('[accordion-id]');
+  if (!block) return;
+
+  // Находим контейнер аккордеона
+  const container = block.closest('.accordion__container');
+  const type = container?.getAttribute('accordion-type') ?? 'multi';
+
+  // Если режим single — закрываем все остальные блоки в контейнере
+  if (type === 'single' && container) {
+    container.querySelectorAll('[accordion-id]').forEach(el => {
+      if (el !== block) el.setAttribute('accordion-state', 'closed');
+    });
   }
-}
 
-accordions.forEach((accordion) => {
-  accordion.addEventListener('click', toggleAccordion);
+  // Переключаем состояние текущего блока
+  const currentState = block.getAttribute('accordion-state') ?? 'closed';
+  block.setAttribute('accordion-state', currentState === 'open' ? 'closed' : 'open');
 });

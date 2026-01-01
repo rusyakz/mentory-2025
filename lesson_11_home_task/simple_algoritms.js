@@ -20,7 +20,7 @@ function isEven(num) {
 // цикл for
 function sumTo(num) {
     let result = 0;
-    for (let i = 0; i <= num; i++) {
+    for (let i = 1; i <= num; i++) {
         result += i
     }
     return result
@@ -28,7 +28,7 @@ function sumTo(num) {
 
 // рекурсия
 function sumTo2(num) {
-    if (num === 0) {
+    if (num === 1) {
         return num
     }
     return num + sumTo2(num-1)
@@ -138,8 +138,7 @@ function printTo(n) {
 function  manualFindIndex(arr, value) {
     for (let i = 1; i <= arr.length; i++) {
         if (arr[i] === value) {
-            return ++i
+            return i
         }
-        return undefined // разве возвращать undefined есть необходимость? если условия цикла for не сработает, то функция и так вернет undefined
     }
 }

@@ -1,0 +1,140 @@
+:root {
+  --bg: #0b0d12;
+  --card-bg: #12151b;
+  --text: #e9edf3;
+  --muted: #a5adba;
+  --accent: #5b9cff;
+  --accent-2: #7c5cff;
+  --border: #1f2430;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(1200px 600px at 20% 0%, #0f1320 0%, #0b0d12 60%, #0b0d12 100%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-header {
+  padding: 48px 0 16px;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.testimonials {
+  padding: 24px 0 64px;
+}
+
+/* Карточки */
+.card {
+  background: linear-gradient(180deg, rgba(18,21,27,0.9) 0%, rgba(18,21,27,0.95) 100%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #243047;
+}
+
+.person .name {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.person .role {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.quote {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #dfe6f3;
+}
+
+.rating {
+  margin-top: auto;
+  color: #f6c44b;
+  letter-spacing: 1px;
+}
+
+/* Макет */
+.testimonials-swiper {
+  padding: 16px 8px 40px; /* space for bullets */
+}
+
+/* Пагинация */
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #394154;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+/* Навигационные стрелки */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #dbe6ff;
+  width: 40px;
+  height: 40px;
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px;
+}
+
+/* Сетка */
+@media (max-width: 599px) {
+  .title { font-size: 26px; }
+  .subtitle { font-size: 14px; }
+  .card { padding: 16px; }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .card { padding: 18px; }
+}

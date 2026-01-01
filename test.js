@@ -1,61 +1,73 @@
 'use strict'
-//
-// // let bb = 'rustem man'
-// //
-// // let test = {
-// //     bb: 'tt'
-// // }
-// //
-// // console.log(test['bb']);
-//
-//
-//
-//
-// let test = (2 > 3) ? true : 22;
-//
-// console.log(test)
-//
-//
-// let a = 22;
-//
-// for (let i = 0; i < a; i++) {
-//     console.log(i)
-// }
-//
-//
-//
-//
-//
-// let arr = [1, 2, 0, 3];
-// let arr2 = [4, 5, 6];
-//
-// arr = arr.concat(arr2); //канкатинаяция массивов
-// let m = arr.pop(); // удаляет последний элемент, можно удаляемый объект в отделюную переменную записать
-// arr.push(7); // Добавить в конец массива один объект
-// arr.unshift(-1, 0); // Добавить в начале массива объекты перечисленные через запятую
-// arr.shift(); // Удалить первый объект
-// arr = arr.slice(1, -2); // Срез массива, указав начальный и последний индек объекта
-// arr.sort(); // сортируют массив
-// arr.reverse(); // сортирует в обратном порядке
-// // arr = arr.toString() // Склеевает объекты  массива в строку через запятую без пробела
-// // arr = arr.toLocaleString() //
-// arr.fill(4, 2, 4) // Заполняет массив данными value в диапазоне индексов start и end
-// let secondObj = arr.at(2) // обращаться по индкусу объекта в массиве
-// let arrLength = arr.length; // это конечно не метод массива, но можно получить количество объектов массива
-//
-//
-// console.log(arr)
-// console.log(m);
-// console.log(secondObj)
-// console.log(arrLength);
 
 
-// #12 Найти число в массиве вручную (без includes)
-function  manualFindIndex(arr, value) {
-    for (let i = 1; i <= arr.length; i++) {
-        if (arr[i] === value) {
-            return ++i
+class Auto {
+    #odometer;
+
+    constructor(manufacturer, model, year, odometer) {
+        this.manufacturer = manufacturer;
+        this.model = model;
+        this.year = year;
+        this.#odometer = odometer
+    }
+
+    getOdometer() {
+        return this.#odometer;
+    }
+
+    editOdometer(value) {
+        if (typeof value === 'number' && value > this.#odometer)  {
+            this.#odometer = value;
+        } else {
+            return 'Проверте введенные значения';
         }
-        return undefined
+    }
+
+    updateOdometer(value) {
+        if (typeof value === 'number')  {
+            this.#odometer += value;
+        } else {
+            return 'Не верное значение';
+        }
+    }
+}
+
+class GasCar extends Auto {
+    constructor(manufacturer, model, year, odometer, enginValue) {
+        super(manufacturer, model, year, odometer);
+
+        this.enginValue = enginValue;
+    }
+}
+
+
+class ElectroCar extends Auto {
+    constructor(manufacturer, model, year, odometer, enginPower) {
+        super(manufacturer, model, year, odometer);
+
+        this.enginPower  = enginPower;
+    }
+}
+
+
+
+let tesla = new ElectroCar('tesla', 'model y', 2022, 10, 1);
+
+console.log(tesla.getOdometer());
+
+tesla.updateOdometer(22);
+
+console.log(tesla.getOdometer());
+
+console.log(typeof(typeof(10)));
+
+
+
+
+class Triangle {
+    constructor(a, b, c) {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 }

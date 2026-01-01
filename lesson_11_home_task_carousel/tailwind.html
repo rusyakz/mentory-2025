@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tailwind Carousel</title>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+<div class="w-full max-w-6xl px-4">
+  <h2 class="text-3xl font-bold text-center mb-8">Отзывы клиентов</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <!-- Слайд -->
+      <div class="swiper-slide">
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <p class="text-gray-700 mb-4">“Отличный сервис, всё сделали быстро и качественно!”</p>
+          <div class="flex items-center">
+            <img src="#" class="rounded-full mr-4" alt="client">
+            <div>
+              <p class="font-semibold">Арман Арманов</p>
+              <p class="text-sm text-gray-500">Генеральный директор</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Слайд -->
+      <div class="swiper-slide">
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <p class="text-gray-700 mb-4">“Очень доволен результатом, рекомендую всем!”</p>
+          <div class="flex items-center">
+            <img src="#" class="rounded-full mr-4" alt="client">
+            <div>
+              <p class="font-semibold">Мария Омарова</p>
+              <p class="text-sm text-gray-500">Маркетолог</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Слайд -->
+      <div class="swiper-slide">
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <p class="text-gray-700 mb-4">“Профессиональный подход и отличная поддержка!”</p>
+          <div class="flex items-center">
+            <img src="#" class="rounded-full mr-4" alt="client">
+            <div>
+              <p class="font-semibold">Алекс Смит</p>
+              <p class="text-sm text-gray-500">Дизайнер</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Слайд -->
+      <div class="swiper-slide">
+        <div class="bg-white shadow-md rounded-lg p-6">
+          <p class="text-gray-700 mb-4">“Профессиональный подход и отличная поддержка!”</p>
+          <div class="flex items-center">
+            <img src="#" class="rounded-full mr-4" alt="client">
+            <div>
+              <p class="font-semibold">Алекс Смит</p>
+              <p class="text-sm text-gray-500">Дизайнер</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Буллеты -->
+    <div class="swiper-pagination mt-6"></div>
+  </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    slidesPerView: 1,
+    spaceBetween: 20,
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+</script>
+</body>
+</html>
