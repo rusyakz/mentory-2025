@@ -34,6 +34,7 @@ body {
     font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     background: linear-gradient(180deg, var(--bg), var(--bg-alt));
     color: var(--text);
+    min-height: 320px;
 }
 
 
@@ -98,7 +99,13 @@ body {
     filter: drop-shadow(var(--shadow));
 }
 
-
+.hero-photo {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 49% 0 49% 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,.35);
+    object-fit: cover;
+}
 
 
 /* Адаптив */
@@ -137,5 +144,24 @@ body {
 
     .nav-list.open {
         display: flex;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-container {
+        grid-template-columns: 1fr; /* один столбец */
+        text-align: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* проекты в одну колонку */
+    }
+
+    .skills {
+        grid-template-columns: 1fr; /* навыки в одну колонку */
+    }
+
+    .hero-photo {
+        max-width: 240px; /* фото уменьшается, но не ломает сетку */
     }
 }

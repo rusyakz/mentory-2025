@@ -39,6 +39,7 @@
     border: none;
     cursor: pointer;
     padding: 8px;
+    min-width: 320px;
 }
 
 .nav-toggle-line {
