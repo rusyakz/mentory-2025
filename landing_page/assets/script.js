@@ -99,3 +99,57 @@ modal.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeModal();
 });
+
+
+
+
+
+
+
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const prevBtn = document.querySelector('.carousel-btn.prev');
+const nextBtn = document.querySelector('.carousel-btn.next');
+const dotsNav = document.querySelector('.carousel-dots');
+
+let currentIndex = 0;
+
+// создаём буллеты
+slides.forEach((_, i) => {
+  const dot = document.createElement('button');
+  if (i === 0) dot.classList.add('active');
+  dotsNav.appendChild(dot);
+  dot.addEventListener('click', () => {
+    currentIndex = i;
+    updateCarousel();
+  });
+});
+
+function visibleCount() {
+  if (window.innerWidth >= 960) return 3;
+  if (window.innerWidth >= 600) return 2;
+  return 1;
+}
+
+function updateCarousel() {
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  track.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+
+  dotsNav.querySelectorAll('button').forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentIndex);
+  });
+}
+
+nextBtn.addEventListener('click', () => {
+  const maxIndex = slides.length - visibleCount();
+  if (currentIndex < maxIndex) currentIndex++;
+  updateCarousel();
+});
+
+prevBtn.addEventListener('click', () => {
+  if (currentIndex > 0) currentIndex--;
+  updateCarousel();
+});
+
+window.addEventListener('resize', updateCarousel);
+

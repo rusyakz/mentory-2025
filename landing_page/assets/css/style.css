@@ -108,6 +108,60 @@ body {
 }
 
 
+/* Карусель */
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.project-card {
+  flex: 0 0 100%; /* по умолчанию — 1 карточка */
+  box-sizing: border-box;
+  padding: 0 12px;
+}
+
+@media (min-width: 600px) {
+  .project-card { flex: 0 0 50%; } /* планшет — 2 карточки */
+}
+@media (min-width: 960px) {
+  .project-card { flex: 0 0 33.333%; } /* ПК — 3 карточки */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,.5);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.carousel-dots button {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #999;
+  cursor: pointer;
+}
+.carousel-dots button.active { background: #3B82F6; }
+
+
+
+
+
 /* Адаптив */
 @media (max-width: 960px) {
     .hero-container {

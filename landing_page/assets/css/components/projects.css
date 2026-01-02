@@ -20,6 +20,7 @@
     aspect-ratio: 16 / 9;
     overflow: hidden;
     background: #0d1424;
+    padding: 19px 0 0 0;
 }
 
 .project-thumb img {
