@@ -1,31 +1,147 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script type="application/javascript" src="./index.js" defer></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галерея</title>
+
+  <!-- Masonry -->
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+  <!-- GLightbox -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <style>
+    /* Базовые стили */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background: #f9fafb;
+      color: #0f172a;
+    }
+    header {
+      padding: 24px;
+      text-align: center;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      margin: 0;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    /* Галерея */
+    .gallery {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .grid {
+      display: block;
+    }
+    .grid-sizer,
+    .grid-item {
+      width: 33.333%;
+    }
+    .grid-item {
+      margin-bottom: 20px;
+      padding: 8px;
+      box-sizing: border-box;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all .6s ease;
+    }
+    .grid-item.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .grid-item a {
+      display: block;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+    .grid-item a:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    }
+    .grid-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 768px) {
+      .grid-sizer,
+      .grid-item { width: 50%; }
+    }
+    @media (max-width: 480px) {
+      .grid-sizer,
+      .grid-item { width: 100%; }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Моя Галерея</h1>
+  </header>
 
-    <div>
-        <form id="form">
-            <label for="name">Name:</label>
-            <input class="name" type="text" id="name" name="name" value="">
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age">
-            <label for="bio">Biography:</label>
-            <textarea id="bio" name="bio"></textarea>
-            <label for="gender">Gender:</label>
-            <select id="gender" name="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
-            <button type="submit" id="btn">Submit</button>
-        </form>
+  <main class="gallery">
+    <div class="grid">
+      <div class="grid-sizer"></div>
+
+      <!-- Карточки -->
+      <div class="grid-item">
+        <a href="https://picsum.photos/id/1015/1200/800" class="glightbox" data-gallery="gallery1">
+          <img src="https://picsum.photos/id/1015/600/400" alt="Фото 1">
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="https://picsum.photos/id/1016/1200/800" class="glightbox" data-gallery="gallery1">
+          <img src="https://picsum.photos/id/1016/600/800" alt="Фото 2">
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="https://picsum.photos/id/1020/1200/800" class="glightbox" data-gallery="gallery1">
+          <img src="https://picsum.photos/id/1020/600/500" alt="Фото 3">
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="https://picsum.photos/id/1024/1200/800" class="glightbox" data-gallery="gallery1">
+          <img src="https://picsum.photos/id/1024/600/600" alt="Фото 4">
+        </a>
+      </div>
+      <div class="grid-item">
+        <a href="https://picsum.photos/id/1035/1200/800" class="glightbox" data-gallery="gallery1">
+          <img src="https://picsum.photos/id/1035/600/700" alt="Фото 5">
+        </a>
+      </div>
     </div>
+  </main>
 
+  <script>
+    // Masonry
+    var grid = document.querySelector('.grid');
+    var msnry = new Masonry(grid, {
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true,
+      gutter: 0
+    });
+
+    // GLightbox
+    const lightbox = GLightbox({ selector: '.glightbox' });
+
+    // Анимация появления карточек
+    const items = document.querySelectorAll('.grid-item');
+    items.forEach((item, i) => {
+      setTimeout(() => item.classList.add('show'), i * 150);
+    });
+  </script>
 </body>
 </html>
