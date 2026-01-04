@@ -1,54 +1,49 @@
+'use strict';
 
-const swiper = new Swiper('.testimonials-swiper', {
+// const swiper = new Swiper(".mySwiper", {
+//   loop: true,
+//   spaceBetween: 30,
+//   pagination: {
+//     el: ".swiper-pagination",
+//     clickable: true,
+//     dynamicBullets: true, //  адаптивные буллеты
+//   },
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+//   breakpoints: {
+//     320: { slidesPerView: 1 },
+//     768: { slidesPerView: 2 },
+//     1024: { slidesPerView: 4 }
+//   }
+// });
 
-  loop: false,
-  speed: 500,
+
+
+const swiper = new Swiper(".mySwiper", {
+  loop: false, // если нужен точный подсчёт страниц, лучше выключить loop
   spaceBetween: 20,
-  slidesPerView: 1,
-
-  simulateTouch: true,
-  touchRatio: 1,
-  grabCursor: true,
-
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     clickable: true,
-    bulletElement: 'button',
-    renderBullet: (index, className) => {
-      // Accessible bullet
-      return `<button class="${className}" aria-label="Перейти к странице ${index + 1}" title="Страница ${index + 1}"></button>`;
-    }
   },
-
-  //
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
   },
-
-  //
-  keyboard: {
-    enabled: true,
-    onlyInViewport: true
-  },
-
-  //
   breakpoints: {
-    600: {
-      slidesPerView: 2,
-      spaceBetween: 24
+    320: { // телефон
+      slidesPerView: 1,
+      slidesPerGroup: 1
     },
-    900: {
+    768: { // планшет
       slidesPerView: 3,
-      spaceBetween: 28
+      slidesPerGroup: 3
+    },
+    1024: { // ПК
+      slidesPerView: 5,
+      slidesPerGroup: 5
     }
-  },
-
-
-  a11y: {
-    enabled: true,
-    prevSlideMessage: 'Предыдущий отзыв',
-    nextSlideMessage: 'Следующий отзыв',
-    paginationBulletMessage: 'Перейти к отзыву {{index}}'
   }
 });
