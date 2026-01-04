@@ -1,83 +1,125 @@
+:root {
+  --card-bg: #fafafa;
+  --text-muted: #777;
+  --text-main: #222;
+  --bullet: #ccc;
+  --bullet-active: #000;
+}
+
+* { box-sizing: border-box; }
+
 body {
-  font-family: Arial, sans-serif;
-  background: #fff;
   margin: 0;
-  padding: 0;
-}
-
-.testimonials {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px 20px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text-main);
   background: #fff;
-  border-radius: 10px;
 }
 
-.swiper {
-  padding: 20px 0;
-}
-
-.testimonial {
+.section-title {
   text-align: center;
-  padding: 20px;
-  background: #fafafa;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  margin: 24px 0 8px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.testimonials .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+  /* боковой паттерн (подставь реальный файл) */
+  background:
+    url("hexagon-left.png") left center repeat-y,
+    url("hexagon-right.png") right center repeat-y,
+    #fff;
+}
+
+.mySwiper {
+  padding: 12px 0 48px; /* место под пагинацию */
+}
+
+.swiper-slide.testimonial {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
 
 .testimonial img {
-  width: 70px;
-  height: 70px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
 }
 
 .testimonial h3 {
-  margin: 5px 0;
-  font-size: 1.1em;
+  margin: 6px 0 2px;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .testimonial .title {
-  color: #777;
-  font-size: 0.9em;
+  margin: 0 0 8px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
 .testimonial .stars {
-  color: gold;
-  font-size: 1.1em;
-  margin: 5px 0;
+  color: #f5a623; /* золотой */
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
 }
 
 .testimonial .text {
-  font-style: italic;
   color: #444;
-  margin-top: 10px;
+  font-size: 0.95rem;
+  line-height: 1.45;
 }
 
-
-
-.swiper-button-next,
-.swiper-button-prev {
+/* Навигация */
+.swiper-button-prev,
+.swiper-button-next {
   color: #000;
 }
 
-
-.swiper-slide {
-  width: 220px; /* фиксированная ширина карточки */
+/* Буллеты — прямоугольные полоски, как в макете */
+.swiper-pagination {
+  bottom: 10px !important;
 }
-
-
-
 
 .swiper-pagination-bullet {
   width: 30px;
   height: 6px;
   border-radius: 3px;
-  background: #ccc;
+  background: var(--bullet);
   opacity: 1;
-  margin: 0 4px !important;
+  margin: 0 5px !important;
+  transition: background 0.25s ease;
 }
+
 .swiper-pagination-bullet-active {
-  background: #000;
+  background: var(--bullet-active);
+}
+
+/* Для телефонов — поменьше карточка и отступы */
+@media (max-width: 767.98px) {
+  .swiper-slide.testimonial {
+    padding: 16px;
+  }
+  .testimonial img {
+    width: 64px; height: 64px;
+  }
+}
+
+
+
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch; /* все карточки одинаковой высоты */
+}
+
+.swiper-slide.testimonial {
+  height: auto; /* растягивается до максимальной */
 }
