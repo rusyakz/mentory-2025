@@ -1,5 +1,5 @@
 const swiper = new Swiper(".mySwiper", {
-  loop: false,             // точный подсчет страниц
+  loop: false,             // подсчет страниц
   spaceBetween: 20,        // отступ между карточками
   pagination: {
     el: ".swiper-pagination",
@@ -9,7 +9,8 @@ const swiper = new Swiper(".mySwiper", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
   },
-  // Группируем по количеству видимых карточек, чтобы буллеты = страницам
+
+  // Группировка по количеству видимых карточек
   breakpoints: {
     0: {                   // телефон
       slidesPerView: 1,

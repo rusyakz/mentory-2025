@@ -1,111 +1,110 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Testimonials Carousel</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="./assets/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carousel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js" defer></script>
+    <script type="text/javascript" src="./script.js" defer></script>
 </head>
+
 <body>
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Карусель. Домашнее задание</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
 
-<section class="testimonials">
-  <div class="container">
-    <h2 class="section-title">Testimonials</h2>
+                    <div class="swiper-slide testimonial">
+                        <img src="./assets/photo/photo1.jpg" alt="" />
+                        <h3>Arman Armanov</h3>
+                        <p class="title">CEO, WebAgency</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="text">Недавно я воспользовался услугой, и остался доволен результатом.</p>
+                    </div>
 
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <!-- Каждая карточка — отдельный .swiper-slide -->
-        <div class="swiper-slide testimonial">
-          <img src="emily.jpg" alt="Emily Jeff" />
-          <h3>Emily Jeff</h3>
-          <p class="title">CEO, TheWebAgency</p>
-          <div class="stars">★★★★★</div>
-          <p class="text">Ten the hastened steepest feelings pleasant few surprise property. An brother he do colonel against.</p>
+                    <div class="swiper-slide testimonial">
+                        <img src="./assets/photo/photo2.jpg" alt="" />
+                        <h3>Hamza Omar</h3>
+                        <p class="title">Manager, WebTech</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="text">Я бы смело рекомендовал этот опыт другим — уверен, что они получат такой же высокий уровень сервиса и останутся довольны.</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial">
+                        <img src="./assets/photo/photo3.jpg" alt="" />
+                        <h3>Sandy Wood</h3>
+                        <p class="title">Developer, 2x Company</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="text">Всё было организовано чётко и профессионально: от первого контакта до финального этапа.</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial">
+                        <img src="./assets/photo/photo4.jpg" alt="" />
+                        <h3>Sara Gold</h3>
+                        <p class="title">Accountant, TheConsultation</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="text">Особенно понравилось внимание к деталям и готовность учитывать мои пожелания.</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial">
+                        <img src="./assets/photo/photo5.jpg" alt="" />
+                        <h3>Marat Janpole</h3>
+                        <p class="title">Designer, CreativeCo</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="text">Команда показала себя надёжной и ответственной, а качество работы превзошло ожидания.</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial">
+                        <img src="./assets/photo/photo6.jpg" alt="" />
+                        <h3>Emily Green</h3>
+                        <p class="title">CEO, TheWebAgency</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="text">Я бы смело рекомендовал этот опыт другим — уверен, что они получат такой же высокий уровень сервиса и останутся довольны.</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial">
+                        <img src="./assets/photo/photo7.jpg" alt="" />
+                        <h3>Alex Ivanov</h3>
+                        <p class="title">Manager, TheWebTech</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="text">Команда показала себя надёжной и ответственной, а качество работы превзошло ожидания.</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial">
+                        <img src="./assets/photo/photo8.jpg" alt="" />
+                        <h3>Nevil Longbottom</h3>
+                        <p class="title">Developer, 2x Company</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="text">Особенно понравилось внимание к деталям и готовность учитывать мои пожелания.</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial">
+                        <img src="./assets/photo/photo9.jpg" alt="" />
+                        <h3>Sara White</h3>
+                        <p class="title">Accountant, TheConsultation</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="text">Всё было организовано чётко и профессионально: от первого контакта до финального этапа.</p>
+                    </div>
+
+                    <div class="swiper-slide testimonial">
+                        <img src="./assets/photo/photo10.jpg" alt="" />
+                        <h3>Irina Kairatovna</h3>
+                        <p class="title">Designer, CreativeCo</p>
+                        <div class="stars">★★★★★</div>
+                        <p class="text">Команда показала себя надёжной и ответственной, а качество работы превзошло ожидания.</p>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
         </div>
+    </section>
 
-        <div class="swiper-slide testimonial">
-          <img src="hamza.jpg" alt="Hamza Malik" />
-          <h3>Hamza Malik</h3>
-          <p class="title">Manager, TheWebTech</p>
-          <div class="stars">★★★★★</div>
-          <p class="text">Can how elinor warmly mrs basket marked. Led raising expense yet demesne weather musical. Me mr what.</p>
-        </div>
-
-        <div class="swiper-slide testimonial">
-          <img src="elizabeth.jpg" alt="Elizabeth Rai" />
-          <h3>Elizabeth Rai</h3>
-          <p class="title">Developer, 2x Company</p>
-          <div class="stars">★★★★★</div>
-          <p class="text">Park next busy eve. Elinor her his secure for twenty met object. Any far saw size want man.</p>
-        </div>
-
-        <div class="swiper-slide testimonial">
-          <img src="sara.jpg" alt="Sara Thomas" />
-          <h3>Sara Thomas</h3>
-          <p class="title">Accountant, TheConsultation</p>
-          <div class="stars">★★★★★</div>
-          <p class="text">Concerns greatest margaret him absolute entrance nay. Door neat week do find past he.</p>
-        </div>
-
-        <div class="swiper-slide testimonial">
-          <img src="extra.jpg" alt="Extra Person" />
-          <h3>Extra Person</h3>
-          <p class="title">Designer, CreativeCo</p>
-          <div class="stars">★★★★★</div>
-          <p class="text">Additional testimonial to fill 5 cards on desktop view.</p>
-        </div>
-
-        <!-- Добавь ещё, чтобы на ПК было несколько страниц -->
-        <div class="swiper-slide testimonial">
-          <img src="emily.jpg" alt="Emily Jeff" />
-          <h3>Emily Jeff</h3>
-          <p class="title">CEO, TheWebAgency</p>
-          <div class="stars">★★★★★</div>
-          <p class="text">Ten the hastened steepest feelings pleasant few surprise property. An brother he do colonel against.</p>
-        </div>
-
-        <div class="swiper-slide testimonial">
-          <img src="hamza.jpg" alt="Hamza Malik" />
-          <h3>Hamza Malik</h3>
-          <p class="title">Manager, TheWebTech</p>
-          <div class="stars">★★★★★</div>
-          <p class="text">Can how elinor warmly mrs basket marked. Led raising expense yet demesne weather musical. Me mr what.</p>
-        </div>
-
-        <div class="swiper-slide testimonial">
-          <img src="elizabeth.jpg" alt="Elizabeth Rai" />
-          <h3>Elizabeth Rai</h3>
-          <p class="title">Developer, 2x Company</p>
-          <div class="stars">★★★★★</div>
-          <p class="text">Park next busy eve. Elinor her his secure for twenty met object. Any far saw size want man.</p>
-        </div>
-
-        <div class="swiper-slide testimonial">
-          <img src="sara.jpg" alt="Sara Thomas" />
-          <h3>Sara Thomas</h3>
-          <p class="title">Accountant, TheConsultation</p>
-          <div class="stars">★★★★★</div>
-          <p class="text">Concerns greatest margaret him absolute entrance nay. Door neat week do find past he.</p>
-        </div>
-
-        <div class="swiper-slide testimonial">
-          <img src="extra.jpg" alt="Extra Person" />
-          <h3>Extra Person</h3>
-          <p class="title">Designer, CreativeCo</p>
-          <div class="stars">★★★★★</div>
-          <p class="text">Additional testimonial to fill 5 cards on desktop view.</p>
-        </div>
-      </div>
-
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-  </div>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-<script src="./script.js"></script>
 </body>
 </html>

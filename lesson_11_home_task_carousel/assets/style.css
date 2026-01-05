@@ -26,15 +26,15 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 24px 16px;
-  /* боковой паттерн (подставь реальный файл) */
+  /* боковой паттерн */
   background:
-    url("hexagon-left.png") left center repeat-y,
-    url("hexagon-right.png") right center repeat-y,
+  /*  url("hexagon-left.png") left center repeat-y, */
+  /*  url("hexagon-right.png") right center repeat-y, */
     #fff;
 }
 
 .mySwiper {
-  padding: 12px 0 48px; /* место под пагинацию */
+  padding: 12px 0 48px;
 }
 
 .swiper-slide.testimonial {
@@ -66,7 +66,7 @@ body {
 }
 
 .testimonial .stars {
-  color: #f5a623; /* золотой */
+  color: #f5a623;
   font-size: 1rem;
   letter-spacing: 1px;
   margin-bottom: 8px;
@@ -84,7 +84,7 @@ body {
   color: #000;
 }
 
-/* Буллеты — прямоугольные полоски, как в макете */
+/* Буллеты */
 .swiper-pagination {
   bottom: 10px !important;
 }
@@ -103,7 +103,7 @@ body {
   background: var(--bullet-active);
 }
 
-/* Для телефонов — поменьше карточка и отступы */
+/* Для телефонов */
 @media (max-width: 767.98px) {
   .swiper-slide.testimonial {
     padding: 16px;
