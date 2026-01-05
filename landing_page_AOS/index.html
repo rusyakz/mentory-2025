@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Рустем — Портфолио</title>
+    <meta name="description" content="Портфолио Рустема: Python, Django, FastAPI, адаптивная вёрстка, UI и галереи." />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script type="text/javascript" src="./assets/script.js" defer></script>
+</head>
+
+<body>
+    <!-- Навигация -->
+    <header class="header" id="top">
+        <div class="container nav-container">
+            <a href="#top" class="logo">Рустем</a>
+            <nav class="nav" aria-label="Главное меню">
+                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list">
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="nav-toggle-line"></span>
+                    <span class="sr-only">Открыть меню</span>
+                </button>
+                <ul id="nav-list" class="nav-list">
+                    <li><a href="#about">Обо мне</a></li>
+                    <li><a href="#skills">Навыки</a></li>
+                    <li><a href="#projects">Проекты</a></li>
+                    <li><a href="#contact">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero section">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1 class="title">Привет, я Рустем</h1>
+                <p class="subtitle">
+                    Начинающий Python‑разработчик. Люблю чистые архитектуры, адаптивную вёрстку и содержательные интерфейсы.
+                    Работаю с Django, FastAPI, Figma.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">Показать проекты</a>
+                    <a href="#contact" class="btn btn-outline">Связаться</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-visual">
+                    <img src="./assets/images/profile.jpg" alt="Rustem" class="hero-photo" />
+                </div>
+<!--                &lt;!&ndash; Иконка кода &ndash;&gt;-->
+<!--                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" class="code-icon">-->
+<!--                    <path d="M20 16 L8 32 L20 48" stroke="#34D399" stroke-width="4" fill="none"/>-->
+<!--                    <path d="M44 16 L56 32 L44 48" stroke="#3B82F6" stroke-width="4" fill="none"/>-->
+<!--                    <line x1="28" y1="12" x2="36" y2="52" stroke="#FACC15" stroke-width="4"/>-->
+<!--                </svg>-->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Обо мне -->
+    <section id="about" class="section fade-in">
+        <div class="container narrow">
+            <h2>Обо мне</h2>
+            <p>
+                Разрабатываю фронт‑ и бэкенд,
+                внимателен к доступности, производительности и читаемости кода. Предпочитаю Python‑стек:
+                Django для классики, FastAPI для быстрых API. В UI — адаптивные сетки, понятная типографика,
+                аккуратные анимации и продуманная навигация.
+            </p>
+        </div>
+    </section>
+
+    <!-- Навыки -->
+    <section id="skills" class="section fade-in">
+        <div class="container">
+            <h2>Навыки</h2>
+            <ul class="skills">
+                <li class="skill-card">
+                    <strong>Backend:</strong> Python, Django, FastAPI, REST, JWT, Celery, PostgreSQL
+                </li>
+                <li class="skill-card">
+                    <strong>Frontend:</strong> HTML5, CSS3 (Flex/Grid), JavaScript, адаптивная вёрстка
+                </li>
+                <li class="skill-card">
+                    <strong>UI/UX:</strong> Figma, прототипирование, GLightbox
+                </li>
+                <li class="skill-card">
+                    <strong>Dev:</strong> Git, тестирование, линтинг, оптимизация
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Проекты -->
+    <section id="projects" class="section fade-in">
+        <div class="container">
+            <h2>Проекты</h2>
+
+            <div class="carousel">
+                <div class="carousel-track">
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="./assets/images/project1.jpg" alt="Дашборд аналитики на Django" loading="lazy" />
+                        </div>
+                        <div class="project-content">
+                            <h3>Django Analytics Dashboard</h3>
+                            <p>Полноценный дашборд с роль‑бэйзд доступом, графиками, экспортом и админкой.</p>
+                            <ul class="tags"><li>Django</li><li>PostgreSQL</li><li>Chart.js</li></ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="./assets/images/project2.jpg" alt="API‑сервис на FastAPI" loading="lazy" />
+                        </div>
+                        <div class="project-content">
+                            <h3>FastAPI Microservice</h3>
+                            <p>REST API с авторизацией, rate‑limit, документацией OpenAPI и unit‑тестами.</p>
+                            <ul class="tags"><li>FastAPI</li><li>Redis</li><li>PyTest</li></ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="./assets/images/project3.jpg" alt="Галерея и лендинг" loading="lazy" />
+                        </div>
+                        <div class="project-content">
+                            <h3>UI‑галерея и лендинг</h3>
+                            <p>Пиксель‑перфект лендинг с адаптивной сеткой и анимацией.</p>
+                            <ul class="tags"><li>HTML</li><li>CSS Grid</li><li>JavaScript</li></ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="./assets/images/project1.jpg" alt="Дашборд аналитики на Django" loading="lazy" />
+                        </div>
+                        <div class="project-content">
+                            <h3>Django Analytics Dashboard</h3>
+                            <p>Полноценный дашборд с роль‑бэйзд доступом, графиками, экспортом и админкой.</p>
+                            <ul class="tags"><li>Django</li><li>PostgreSQL</li><li>Chart.js</li></ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="./assets/images/project2.jpg" alt="API‑сервис на FastAPI" loading="lazy" />
+                        </div>
+                        <div class="project-content">
+                            <h3>FastAPI Microservice</h3>
+                            <p>REST API с авторизацией, rate‑limit, документацией OpenAPI и unit‑тестами.</p>
+                            <ul class="tags"><li>FastAPI</li><li>Redis</li><li>PyTest</li></ul>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="./assets/images/project3.jpg" alt="Галерея и лендинг" loading="lazy" />
+                        </div>
+                        <div class="project-content">
+                            <h3>UI‑галерея и лендинг</h3>
+                            <p>Пиксель‑перфект лендинг с адаптивной сеткой и анимацией.</p>
+                            <ul class="tags"><li>HTML</li><li>CSS Grid</li><li>JavaScript</li></ul>
+                        </div>
+                    </article>
+
+                </div>
+
+                <!-- Стрелки -->
+                <button class="carousel-btn prev">←</button>
+                <button class="carousel-btn next">→</button>
+
+                <!-- Буллеты -->
+                <div class="carousel-dots"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Контакты -->
+    <section id="contact" class="section fade-in">
+        <div class="container narrow">
+            <h2>Контакты</h2>
+            <p>Открыт к проектам и сотрудничеству. Напишите — отвечу по возможности оперативно.</p>
+
+            <form class="contact-form" novalidate>
+                <!-- Комментарии в форме: атрибут name пригодится для интеграции с бэкендом -->
+                <div class="form-row">
+                    <label for="name">Имя</label>
+                    <input id="name" name="name" type="text" placeholder="Ваше имя" required />
+                    <span class="error" data-for="name"></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" required />
+                    <span class="error" data-for="email"></span>
+                </div>
+
+                <div class="form-row">
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Коротко о задаче" required></textarea>
+                    <span class="error" data-for="message"></span>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                    <p class="form-status" aria-live="polite"></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Модальное окно для увеличения изображений -->
+    <div class="modal" id="image-modal" aria-hidden="true" aria-labelledby="modal-title" role="dialog">
+        <div class="modal-backdrop" data-close-modal></div>
+        <div class="modal-dialog" role="document">
+            <button class="modal-close" data-close-modal aria-label="Закрыть">✕</button>
+            <img id="modal-image" src="" alt="Просмотр проекта" />
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© Рустем.</p>
+            <a href="#top" class="to-top">Наверх ↑</a>
+        </div>
+    </footer>
+
+</body>
+</html>

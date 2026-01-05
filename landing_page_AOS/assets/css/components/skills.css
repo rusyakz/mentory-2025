@@ -1,0 +1,12 @@
+/* Навыки */
+.skills {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.skill-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+}
