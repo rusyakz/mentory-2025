@@ -4,6 +4,11 @@ body {
     color: #fff;
     background: url('./assets/images/bg.jpg') center/cover no-repeat fixed;
     backdrop-filter: blur(4px);
+    /*-webkit-backdrop-filter: blur(4px);*/
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .overlay {
@@ -15,17 +20,14 @@ body {
 /* Левая панель */
 .sidebar {
     width: 50%;
-    height: 90vh;
-    overflow: hidden;
+    /*height: 90vh;*/
+    /*overflow: hidden;*/
     padding: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.sidebar::-webkit-scrollbar {
-    display: none;
-}
 
 .badge {
     display: inline-block;
