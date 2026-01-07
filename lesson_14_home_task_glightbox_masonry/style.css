@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    color: #fff;
+    background: url('./assets/images/bg.jpg') center/cover no-repeat fixed;
+    backdrop-filter: blur(8px);
+}
+
+.overlay {
+    min-height: 100vh;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+}
+
+/* Левая панель */
+.sidebar {
+    width: 50%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.badge {
+    display: inline-block;
+    background: #ff3b73;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin: 0 0 1rem;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+}
+
+.features li {
+    margin-bottom: 0.6rem;
+}
+
+.brand {
+    opacity: 0.85;
+    margin-top: auto;
+}
+
+/* Правая панель — галерея */
+.panel {
+    width: 50%;
+    background: rgba(20,20,20,0.85);
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+    grid-template-rows: repeat(3, 200px);  /* 3 ряда фиксированной высоты */
+    gap: 1rem;
+}
+
+.panel .caption {
+    color: #fff;
+    transition: color 0.9s ease;
+}
+
+.panel .caption:hover {
+    color: #807b7b;
+}
+
+/* Карточка */
+.card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+    background: #000;
+    cursor: pointer;
+    transition: all .33s ease-in-out;
+}
+
+.card:hover {
+    /*box-shadow: 0 6px 14px rgba(0,0,0,0.35);*/
+    transform: scale(1.1);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Описание поверх картинки */
+.caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 10px 12px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    font-size: 14px;
+}
+
+.caption .cap-title {
+    font-weight: 600;
+}
+
+.caption .cap-desc {
+    opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+    .sidebar, .panel {
+        width: 100%;
+    }
+
+    .panel {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 180px);
+    }
+}
+
+@media (max-width: 600px) {
+    .panel {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 180px);
+    }
+}

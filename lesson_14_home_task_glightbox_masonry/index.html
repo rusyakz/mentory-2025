@@ -1,67 +1,156 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Галерея</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script type="text/javascript" src="assets/js/script.js" defer></script>
-    <script type="text/javascript" src="assets/js/glightbox.min.js" defer></script>
-
-    <!-- GLightbox JS -->
-<!--    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js" defer></script>-->
+    <meta charset="UTF-8">
+    <title>Галерея</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- GLightbox CSS -->
-<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- GLightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <link rel="stylesheet" href="./style.css">
 </head>
+
 <body>
+    <div class="overlay">
+        <!-- Левая колонка -->
+        <aside class="sidebar">
+            <span class="badge">FREE</span>
+            <h1 class="title">Masonry Grid Layout</h1>
+            <ul class="features">
+                <li>• Scalable layout using Auto Layout</li>
+                <li>• Componentized for ease of use</li>
+                <li>• Replace the images to suit your needs</li>
+            </ul>
+            <div class="brand">Freshdesign | EDS<br>www.freshdesign.com/eds</div>
+        </aside>
 
-<div class="overlay">
-  <!-- Левая колонка -->
-  <aside class="sidebar">
-    <span class="badge">FREE</span>
-    <h1 class="title">Masonry Grid Layout</h1>
-    <ul class="features">
-      <li>• Scalable layout using Auto Layout</li>
-      <li>• Componentized for ease of use</li>
-      <li>• Replace the images to suit your needs</li>
-    </ul>
-    <div class="brand">Freshdesign | EDS<br>www.freshdesign.com/eds</div>
-  </aside>
+        <!-- Правая колонка -->
+        <section class="panel">
 
-  <!-- Правая колонка -->
-  <section class="panel">
-    <!-- Карточки -->
-    <a href="./assets/images/img1.jpg" class="glightbox card" data-gallery="gallery">
-      <img src="./assets/images/img1.jpg" alt="Image 1">
-      <div class="caption">
-        <div class="cap-title">Заголовок 1</div>
-        <div class="cap-desc">Описание картинки</div>
-      </div>
-    </a>
+            <a href="./assets/images/img1.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img1.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Worms W.M.D.</div>
+                    <div class="cap-desc">Военная тактика</div>
+                </div>
+            </a>
 
-    <a href="./assets/images/img2.jpg" class="glightbox card" data-gallery="gallery">
-      <img src="./assets/images/img2.jpg" alt="Image 2">
-      <div class="caption">
-        <div class="cap-title">Заголовок 2</div>
-        <div class="cap-desc">Описание картинки</div>
-      </div>
-    </a>
+            <a href="./assets/images/img2.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img2.jpg" alt="Image 2">
+                <div class="caption">
+                    <div class="cap-title">Сияние</div>
+                    <div class="cap-desc">Гипотический трип</div>
+                </div>
+            </a>
 
-    <a href="./assets/images/img3.jpg" class="glightbox card" data-gallery="gallery">
-      <img src="./assets/images/img3.jpg" alt="Image 3">
-      <div class="caption">
-        <div class="cap-title">Заголовок 3</div>
-        <div class="cap-desc">Описание картинки</div>
-      </div>
-    </a>
+            <a href="./assets/images/img3.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img3.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Черная дыра</div>
+                    <div class="cap-desc">Падение в горизонт событий</div>
+                </div>
+            </a>
 
-    <!-- добавь остальные карточки, всего 9 для 3 рядов -->
-  </section>
-</div>
+            <a href="./assets/images/img4.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img4.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Волна</div>
+                    <div class="cap-desc">Морская волна</div>
+                </div>
+            </a>
 
+            <a href="./assets/images/img5.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img5.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Закат</div>
+                    <div class="cap-desc">Закат на фоне гор</div>
+                </div>
+            </a>
+
+            <a href="./assets/images/img6.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img6.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Заголовок 1</div>
+                    <div class="cap-desc">Описание картинки</div>
+                </div>
+            </a>
+
+            <a href="./assets/images/img7.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img7.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Заголовок 1</div>
+                    <div class="cap-desc">Описание картинки</div>
+                </div>
+            </a>
+
+            <a href="./assets/images/img8.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img8.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Заголовок 1</div>
+                    <div class="cap-desc">Описание картинки</div>
+                </div>
+            </a>
+
+            <a href="./assets/images/img9.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img9.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Заголовок 1</div>
+                    <div class="cap-desc">Описание картинки</div>
+                </div>
+            </a>
+
+            <a href="./assets/images/img10.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img10.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Заголовок 1</div>
+                    <div class="cap-desc">Описание картинки</div>
+                </div>
+            </a>
+
+            <a href="./assets/images/img11.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img11.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Заголовок 1</div>
+                    <div class="cap-desc">Описание картинки</div>
+                </div>
+            </a>
+
+            <a href="./assets/images/img12.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img12.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Заголовок 1</div>
+                    <div class="cap-desc">Описание картинки</div>
+                </div>
+            </a>
+
+            <a href="./assets/images/img13.jpg" class="glightbox card" data-gallery="gallery">
+                <img src="./assets/images/img13.jpg" alt="Image 1">
+                <div class="caption">
+                    <div class="cap-title">Заголовок 1</div>
+                    <div class="cap-desc">Описание картинки</div>
+                </div>
+            </a>
+
+
+
+        </section>
+    </div>
+
+
+
+
+    <script>
+  const lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    zoomable: true
+  });
+</script>
 
 </body>
 </html>
