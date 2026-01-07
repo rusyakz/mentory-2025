@@ -4,7 +4,6 @@ body {
     color: #fff;
     background: url('./assets/images/bg.jpg') center/cover no-repeat fixed;
     backdrop-filter: blur(4px);
-    /*-webkit-backdrop-filter: blur(4px);*/
 }
 
 body::-webkit-scrollbar {
@@ -20,8 +19,7 @@ body::-webkit-scrollbar {
 /* Левая панель */
 .sidebar {
     width: 50%;
-    /*height: 90vh;*/
-    /*overflow: hidden;*/
+    height: 100vh;
     padding: 3rem;
     display: flex;
     flex-direction: column;
