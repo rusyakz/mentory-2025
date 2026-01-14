@@ -310,4 +310,4 @@ result = depth_calculation(max_danger)
 print("Приблизительная глубина безопасной кладки: ", result)
 
 
-
+print()
