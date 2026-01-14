@@ -75,9 +75,41 @@
 
 
 
-const a = Math.random()
+// const a = Math.random()
+//
+// console.log(a)
 
-console.log(a)
+
+// const user = {
+//     name: 'John',
+//     sayHi() {
+//         console.log(this.name)
+//     }
+// }
+
+// setTimeout(() => user.sayHi(), 1000)
+//
+// setTimeout(user.sayHi.bind(user), 1000)
+//
+//
+//
+//
+// console.log(1)
+// setTimeout(() => console.log(2), 0.00000000001)
+// Promise.resolve().then(() => console.log(3))
+// console.log(4)
+//
 
 
+function createCounter() {
+    let count = 0;
+    return function(){
+        console.log(++count);
+        // return count;
+    }
+}
 
+const counter = createCounter()
+counter() // 1
+counter() // 2
+counter() // 3
